@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>705859911249-7ddc5ugv0ad8qc4lnlsfsispmunh81pp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.705859911249-7ddc5ugv0ad8qc4lnlsfsispmunh81pp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDERLCkYFwIQfhF7bSkAKbD8TnYhA6xZNg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>705859911249</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>yousif.Breeze</string>
+	<key>PROJECT_ID</key>
+	<string>breeze-5678a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>breeze-5678a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:705859911249:ios:eee1769ebac06fe0f08270</string>
+</dict>
+</plist>

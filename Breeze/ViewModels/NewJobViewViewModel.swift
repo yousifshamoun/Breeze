@@ -51,7 +51,7 @@ class NewJobViewViewModel: ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue(
-            "Bearer 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",
+            "Bearer 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",
             forHTTPHeaderField: "Authorization"
         )
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
