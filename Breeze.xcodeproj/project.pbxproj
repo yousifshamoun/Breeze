@@ -8,12 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		F743DA8E2A106FF4001FACB9 /* BreezeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DA8D2A106FF4001FACB9 /* BreezeApp.swift */; };
-		F743DA902A106FF4001FACB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DA8F2A106FF4001FACB9 /* ContentView.swift */; };
+		F743DA902A106FF4001FACB9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DA8F2A106FF4001FACB9 /* MainView.swift */; };
 		F743DA922A106FF6001FACB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F743DA912A106FF6001FACB9 /* Assets.xcassets */; };
 		F743DA952A106FF6001FACB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F743DA942A106FF6001FACB9 /* Preview Assets.xcassets */; };
 		F743DA9F2A106FF6001FACB9 /* BreezeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DA9E2A106FF6001FACB9 /* BreezeTests.swift */; };
 		F743DAA92A106FF6001FACB9 /* BreezeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAA82A106FF6001FACB9 /* BreezeUITests.swift */; };
 		F743DAAB2A106FF6001FACB9 /* BreezeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAAA2A106FF6001FACB9 /* BreezeUITestsLaunchTests.swift */; };
+		F743DAB92A11AE75001FACB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F743DAB82A11AE75001FACB9 /* FirebaseAuth */; };
+		F743DABB2A11AE75001FACB9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F743DABA2A11AE75001FACB9 /* FirebaseFirestore */; };
+		F743DABD2A11AE75001FACB9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F743DABC2A11AE75001FACB9 /* FirebaseFirestoreSwift */; };
+		F743DABF2A11AFC1001FACB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F743DABE2A11AFC1001FACB9 /* GoogleService-Info.plist */; };
+		F743DAC42A11B29D001FACB9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAC32A11B29D001FACB9 /* ProfileView.swift */; };
+		F743DAC62A11B2B9001FACB9 /* JobsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAC52A11B2B9001FACB9 /* JobsListView.swift */; };
+		F743DAC82A11B2C2001FACB9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAC72A11B2C2001FACB9 /* LoginView.swift */; };
+		F743DACA2A11B2DA001FACB9 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAC92A11B2DA001FACB9 /* RegisterView.swift */; };
+		F743DACC2A11B31D001FACB9 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DACB2A11B31D001FACB9 /* ChatView.swift */; };
+		F743DACE2A11B340001FACB9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DACD2A11B340001FACB9 /* MessagesView.swift */; };
+		F743DAD12A11BAA4001FACB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD02A11BAA4001FACB9 /* User.swift */; };
+		F743DAD32A11BAB5001FACB9 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD22A11BAB5001FACB9 /* Job.swift */; };
+		F743DAD62A11BB05001FACB9 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD52A11BB05001FACB9 /* MainViewViewModel.swift */; };
+		F743DAD82A11BB10001FACB9 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD72A11BB10001FACB9 /* ProfileViewViewModel.swift */; };
+		F743DADA2A11BB1C001FACB9 /* NewJobViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD92A11BB1C001FACB9 /* NewJobViewViewModel.swift */; };
+		F743DADC2A11BB27001FACB9 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DADB2A11BB27001FACB9 /* LoginViewViewModel.swift */; };
+		F743DADE2A11BB43001FACB9 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DADD2A11BB43001FACB9 /* RegisterViewViewModel.swift */; };
+		F743DAE22A11BB55001FACB9 /* ChatViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE12A11BB55001FACB9 /* ChatViewViewModel.swift */; };
+		F743DAE42A11BB5F001FACB9 /* MessagesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */; };
+		F743DAE62A11C127001FACB9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE52A11C127001FACB9 /* HeaderView.swift */; };
+		F743DAE82A12E70D001FACB9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE72A12E70D001FACB9 /* Extension.swift */; };
+		F743DAEA2A13059C001FACB9 /* NewJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE92A13059C001FACB9 /* NewJobView.swift */; };
+		F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +59,7 @@
 /* Begin PBXFileReference section */
 		F743DA8A2A106FF4001FACB9 /* Breeze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breeze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F743DA8D2A106FF4001FACB9 /* BreezeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreezeApp.swift; sourceTree = "<group>"; };
-		F743DA8F2A106FF4001FACB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F743DA8F2A106FF4001FACB9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F743DA912A106FF6001FACB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F743DA942A106FF6001FACB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F743DA9A2A106FF6001FACB9 /* BreezeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreezeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +67,26 @@
 		F743DAA42A106FF6001FACB9 /* BreezeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreezeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F743DAA82A106FF6001FACB9 /* BreezeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreezeUITests.swift; sourceTree = "<group>"; };
 		F743DAAA2A106FF6001FACB9 /* BreezeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreezeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F743DABE2A11AFC1001FACB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F743DAC32A11B29D001FACB9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F743DAC52A11B2B9001FACB9 /* JobsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListView.swift; sourceTree = "<group>"; };
+		F743DAC72A11B2C2001FACB9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F743DAC92A11B2DA001FACB9 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		F743DACB2A11B31D001FACB9 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		F743DACD2A11B340001FACB9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		F743DAD02A11BAA4001FACB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F743DAD22A11BAB5001FACB9 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		F743DAD52A11BB05001FACB9 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
+		F743DAD72A11BB10001FACB9 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
+		F743DAD92A11BB1C001FACB9 /* NewJobViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewViewModel.swift; sourceTree = "<group>"; };
+		F743DADB2A11BB27001FACB9 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		F743DADD2A11BB43001FACB9 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
+		F743DAE12A11BB55001FACB9 /* ChatViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewViewModel.swift; sourceTree = "<group>"; };
+		F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewViewModel.swift; sourceTree = "<group>"; };
+		F743DAE52A11C127001FACB9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F743DAE72A12E70D001FACB9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F743DAE92A13059C001FACB9 /* NewJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobView.swift; sourceTree = "<group>"; };
+		F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F743DAB92A11AE75001FACB9 /* FirebaseAuth in Frameworks */,
+				F743DABB2A11AE75001FACB9 /* FirebaseFirestore in Frameworks */,
+				F743DABD2A11AE75001FACB9 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +140,14 @@
 		F743DA8C2A106FF4001FACB9 /* Breeze */ = {
 			isa = PBXGroup;
 			children = (
+				F743DAD42A11BAED001FACB9 /* ViewModels */,
+				F743DACF2A11BA99001FACB9 /* Models */,
+				F743DAC02A11B259001FACB9 /* Views */,
+				F743DABE2A11AFC1001FACB9 /* GoogleService-Info.plist */,
 				F743DA8D2A106FF4001FACB9 /* BreezeApp.swift */,
-				F743DA8F2A106FF4001FACB9 /* ContentView.swift */,
 				F743DA912A106FF6001FACB9 /* Assets.xcassets */,
 				F743DA932A106FF6001FACB9 /* Preview Content */,
+				F743DAE72A12E70D001FACB9 /* Extension.swift */,
 			);
 			path = Breeze;
 			sourceTree = "<group>";
@@ -127,6 +177,46 @@
 			path = BreezeUITests;
 			sourceTree = "<group>";
 		};
+		F743DAC02A11B259001FACB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F743DA8F2A106FF4001FACB9 /* MainView.swift */,
+				F743DAC32A11B29D001FACB9 /* ProfileView.swift */,
+				F743DAC52A11B2B9001FACB9 /* JobsListView.swift */,
+				F743DAE92A13059C001FACB9 /* NewJobView.swift */,
+				F743DAC72A11B2C2001FACB9 /* LoginView.swift */,
+				F743DAC92A11B2DA001FACB9 /* RegisterView.swift */,
+				F743DACB2A11B31D001FACB9 /* ChatView.swift */,
+				F743DACD2A11B340001FACB9 /* MessagesView.swift */,
+				F743DAE52A11C127001FACB9 /* HeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F743DACF2A11BA99001FACB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F743DAD02A11BAA4001FACB9 /* User.swift */,
+				F743DAD22A11BAB5001FACB9 /* Job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F743DAD42A11BAED001FACB9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F743DAD52A11BB05001FACB9 /* MainViewViewModel.swift */,
+				F743DAD72A11BB10001FACB9 /* ProfileViewViewModel.swift */,
+				F743DAD92A11BB1C001FACB9 /* NewJobViewViewModel.swift */,
+				F743DADB2A11BB27001FACB9 /* LoginViewViewModel.swift */,
+				F743DADD2A11BB43001FACB9 /* RegisterViewViewModel.swift */,
+				F743DAE12A11BB55001FACB9 /* ChatViewViewModel.swift */,
+				F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */,
+				F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +227,18 @@
 				F743DA862A106FF4001FACB9 /* Sources */,
 				F743DA872A106FF4001FACB9 /* Frameworks */,
 				F743DA882A106FF4001FACB9 /* Resources */,
+				F71BC1232A147AFA00FC5762 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Breeze;
+			packageProductDependencies = (
+				F743DAB82A11AE75001FACB9 /* FirebaseAuth */,
+				F743DABA2A11AE75001FACB9 /* FirebaseFirestore */,
+				F743DABC2A11AE75001FACB9 /* FirebaseFirestoreSwift */,
+			);
 			productName = Breeze;
 			productReference = F743DA8A2A106FF4001FACB9 /* Breeze.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +311,9 @@
 				Base,
 			);
 			mainGroup = F743DA812A106FF4001FACB9;
+			packageReferences = (
+				F743DAB72A11AE75001FACB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F743DA8B2A106FF4001FACB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +332,7 @@
 			files = (
 				F743DA952A106FF6001FACB9 /* Preview Assets.xcassets in Resources */,
 				F743DA922A106FF6001FACB9 /* Assets.xcassets in Resources */,
+				F743DABF2A11AFC1001FACB9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,13 +352,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F71BC1232A147AFA00FC5762 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F743DA862A106FF4001FACB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F743DA902A106FF4001FACB9 /* ContentView.swift in Sources */,
+				F743DACE2A11B340001FACB9 /* MessagesView.swift in Sources */,
+				F743DAE62A11C127001FACB9 /* HeaderView.swift in Sources */,
+				F743DADC2A11BB27001FACB9 /* LoginViewViewModel.swift in Sources */,
+				F743DA902A106FF4001FACB9 /* MainView.swift in Sources */,
+				F743DAD62A11BB05001FACB9 /* MainViewViewModel.swift in Sources */,
+				F743DAC42A11B29D001FACB9 /* ProfileView.swift in Sources */,
+				F743DADE2A11BB43001FACB9 /* RegisterViewViewModel.swift in Sources */,
+				F743DAE42A11BB5F001FACB9 /* MessagesViewViewModel.swift in Sources */,
 				F743DA8E2A106FF4001FACB9 /* BreezeApp.swift in Sources */,
+				F743DAD82A11BB10001FACB9 /* ProfileViewViewModel.swift in Sources */,
+				F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */,
+				F743DACA2A11B2DA001FACB9 /* RegisterView.swift in Sources */,
+				F743DAE22A11BB55001FACB9 /* ChatViewViewModel.swift in Sources */,
+				F743DAD12A11BAA4001FACB9 /* User.swift in Sources */,
+				F743DAE82A12E70D001FACB9 /* Extension.swift in Sources */,
+				F743DADA2A11BB1C001FACB9 /* NewJobViewViewModel.swift in Sources */,
+				F743DAEA2A13059C001FACB9 /* NewJobView.swift in Sources */,
+				F743DACC2A11B31D001FACB9 /* ChatView.swift in Sources */,
+				F743DAC82A11B2C2001FACB9 /* LoginView.swift in Sources */,
+				F743DAC62A11B2B9001FACB9 /* JobsListView.swift in Sources */,
+				F743DAD32A11BAB5001FACB9 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,13 +556,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Breeze/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Q7KCF7YSM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Breeze;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,6 +573,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yousif.Breeze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,13 +590,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Breeze/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Q7KCF7YSM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Breeze;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +607,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yousif.Breeze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -577,6 +728,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F743DAB72A11AE75001FACB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F743DAB82A11AE75001FACB9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F743DAB72A11AE75001FACB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F743DABA2A11AE75001FACB9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F743DAB72A11AE75001FACB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F743DABC2A11AE75001FACB9 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F743DAB72A11AE75001FACB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F743DA822A106FF4001FACB9 /* Project object */;
 }
