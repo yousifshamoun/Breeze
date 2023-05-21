@@ -6,13 +6,14 @@
 //
 
 import Foundation
-
+import Vision
+import UIKit
 class NewJobViewViewModel: ObservableObject {
     @Published var loading: Bool = false
     @Published var otherIssues: String = ""
     @Published var completion: String = ""
     @Published var selectedBrand = "Rheem"
-    @Published var errorCode = 0
+    @Published var errorCode = 1
     @Published var lowPressure = false
     @Published var hotWater = false
     @Published var leakPresent = false
@@ -24,6 +25,50 @@ class NewJobViewViewModel: ObservableObject {
 //   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui \
 //   officia deserunt mollit anim id est laborum.
     init() {}
+    func recognizeText() {
+        func getModelNumber(text: String)-> String {
+            var res = ""
+            do {
+                let regex = try NSRegularExpression(pattern: "(?<=Model Number,\\s)([A-Z0-9\\-]+)", options: .caseInsensitive)
+                let results = regex.matches(in: text, options: [], range: NSRange(text.startIndex..., in: text))
+                let matches = results.map {
+                    String(text[Range($0.range, in: text)!])
+                }
+                res = matches.first ?? "nil"
+            } catch let error {
+                print("Invalid regex: \(error.localizedDescription)")
+            }
+            return res
+        }
+        guard let image: CGImage = UIImage(named: "example4")?.cgImage else {return}
+        // handler creation
+        let handler = VNImageRequestHandler(cgImage: image, options: [:])
+        // request creation
+        let request = VNRecognizeTextRequest {[weak self] request, error in
+            guard let observations = request.results as? [VNRecognizedTextObservation],
+                  error == nil else {
+                return
+            }
+            let text = observations.compactMap({
+                $0.topCandidates(1).first?.string
+            }
+            )
+                .joined(separator: ", ")
+            DispatchQueue.main.async {
+                let modelNumber = getModelNumber(text: text)
+                print(modelNumber)
+                self?.completion = "Model Number: \(modelNumber)"
+//                print(text)
+//                self?.completion = text
+            }
+        }
+        // process request
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
+    }
     func constructPrompt() -> String {
         var prompt: String = "I am a veteran plumber, please diagnose a "
         prompt += selectedBrand

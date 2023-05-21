@@ -40,7 +40,8 @@ struct NewJobView: View {
                     .padding(5)
                 Button {
                     loading = true
-                    viewModel.send()
+//                    viewModel.send()
+                    viewModel.recognizeText()
                 }
             label: {
                 ZStack {
