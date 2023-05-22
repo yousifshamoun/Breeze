@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-
+import PhotosUI
 struct NewJobView: View {
     @StateObject var viewModel = NewJobViewViewModel()
-    let brands = ["Rheem", "Rinnai", "Bosch", "Stiebel"]
+    @State var ratingPlateImage: [PhotosPickerItem] = []
+    @State var data: Data?
     var spinner = UIActivityIndicatorView(style: .large)
     @State var loading = false
     var body: some View {
@@ -19,29 +20,37 @@ struct NewJobView: View {
                 .bold()
                 .padding(.top)
             Form {
-                Picker(selection: $viewModel.selectedBrand, label: Text("Select Brand")) {
-                    ForEach(brands, id: \.self) {
-                        Text($0)
+                if let data = data, let uiimage = UIImage(data: data) {
+                    Image(uiImage: uiimage)
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width,
+                               height: 300)
+                }
+                PhotosPicker(
+                    selection: $ratingPlateImage,
+                    maxSelectionCount: 1,
+                    matching: .images
+                ) {
+                    Text("Pick Photo")
+                }
+                .onChange(of: ratingPlateImage) { newValue in
+                    guard let item = ratingPlateImage.first else {return}
+                    item .loadTransferable(type: Data.self) { result in
+                        switch result {
+                        case .success(let data):
+                            if let data = data {
+                                self.data = data
+                            } else {
+                                print("data is nil")
+                            }
+                        case .failure(let failure):
+                            fatalError("failure")
+                        }
                     }
                 }
-                .pickerStyle(.segmented)
-                .padding(5)
-                Picker("Error Code: ", selection: $viewModel.errorCode) {
-                    ForEach(1...100, id: \.self) { number in
-                        Text("\(number)")
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                Toggle("Low Water Pressure", isOn: $viewModel.lowPressure)
-                Toggle("No Hot Water", isOn: $viewModel.hotWater)
-                Toggle("Leak Present", isOn: $viewModel.leakPresent)
-                TextField("Other Issues: ", text: $viewModel.otherIssues)
-                    .textFieldStyle(DefaultTextFieldStyle())
-                    .padding(5)
                 Button {
                     loading = true
-//                    viewModel.send()
-                    viewModel.recognizeText()
+                    viewModel.recognizeText(data: data)
                 }
             label: {
                 ZStack {
