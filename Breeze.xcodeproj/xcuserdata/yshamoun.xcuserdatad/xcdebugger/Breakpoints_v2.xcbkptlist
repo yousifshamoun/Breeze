@@ -3,4 +3,70 @@
    uuid = "F30CFBD3-7820-4BF6-AA32-F95239729C47"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60B3FF9A-CAF8-44DC-A065-67EEB1772A84"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Breeze/ViewModels/NewJobViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "send(prompt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CC25BB1-2A7B-4E4A-B12C-04093D76B013"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Breeze/ViewModels/NewJobViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "send(prompt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CC25BB1-2A7B-4E4A-B12C-04093D76B013 - dc74633e3dc3c096"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Breeze.NewJobViewViewModel.send(prompt: Swift.String) -&gt; ()"
+                  moduleName = "Breeze"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yshamoun/Desktop/Breeze/Breeze/ViewModels/NewJobViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "1CC25BB1-2A7B-4E4A-B12C-04093D76B013 - dc74633e3dc3c096"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Breeze.NewJobViewViewModel.send(prompt: Swift.String) -&gt; ()"
+                  moduleName = "Breeze"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yshamoun/Desktop/Breeze/Breeze/ViewModels/NewJobViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1052">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

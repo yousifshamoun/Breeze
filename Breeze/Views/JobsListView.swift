@@ -6,13 +6,21 @@
 //
 
 import SwiftUI
-
+import FirebaseFirestoreSwift
 struct JobsListView: View {
+    init(userID: String) {
+        self._jobs = FirestoreQuery(collectionPath: "users/\(userID)/postProcessedJobs")
+    }
     @StateObject var viewModel = JobsListViewViewModel()
+    @FirestoreQuery var jobs: [PostProcessedJob]
     var body: some View {
         NavigationView {
             VStack {
-            }
+                List(jobs) { job in
+//                    Text(job.diagnosticAnswer)
+                   JobListItemView(job: job)
+                }.listStyle(PlainListStyle())
+             }
             .navigationTitle("Jobs List")
             .toolbar {
                 Button {
@@ -22,14 +30,15 @@ struct JobsListView: View {
                 }
             }
             .sheet(isPresented: $viewModel.showingNewJobView) {
-                NewJobView()
+                NewJobView(newJobPresented:
+                            $viewModel.showingNewJobView)
             }
-        }
+        }.onAppear(
+            perform: {print("jobs: ", self._jobs)})
     }
 }
-
 struct JobsListView_Previews: PreviewProvider {
     static var previews: some View {
-        JobsListView()
+        JobsListView(userID: "bGSCCrG3CphQGNE3QssKsJkvwlb2")
     }
 }

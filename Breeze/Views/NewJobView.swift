@@ -8,6 +8,7 @@
 import SwiftUI
 import PhotosUI
 struct NewJobView: View {
+    @Binding var newJobPresented: Bool
     @StateObject var viewModel = NewJobViewViewModel()
     @State var ratingPlateImage: [PhotosPickerItem] = []
     @State var data: Data?
@@ -49,8 +50,9 @@ struct NewJobView: View {
                     }
                 }
                 Button {
-                    loading = true
                     viewModel.recognizeText(data: data)
+                    newJobPresented = false
+                    
                 }
             label: {
                 ZStack {
@@ -63,14 +65,14 @@ struct NewJobView: View {
                 }
             }
             .padding()
-                if viewModel.completion.isEmpty && loading {
-                    HStack {
-                        Spacer()
-                        ProgressView()
-                            .scaleEffect(2)
-                        Spacer()
-                    }
-                }
+//                if viewModel.completion.isEmpty && loading {
+//                    HStack {
+//                        Spacer()
+//                        ProgressView()
+//                            .scaleEffect(2)
+//                        Spacer()
+//                    }
+//                }
                 Text(viewModel.completion)
                     .font(.system(size: 18))
                     .foregroundColor(Color.black)
@@ -82,6 +84,9 @@ struct NewJobView: View {
 
 struct NewJobView_Previews: PreviewProvider {
     static var previews: some View {
-        NewJobView()
+        NewJobView(newJobPresented: Binding(get: {
+            return true
+        }, set: { _ in
+        }))
     }
 }

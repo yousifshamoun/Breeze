@@ -10,6 +10,8 @@ import Vision
 import UIKit
 import SwiftUI
 import PhotosUI
+import FirebaseAuth
+import FirebaseFirestore
 class NewJobViewViewModel: ObservableObject {
     @Published var loading: Bool = false
     @Published var completion: String = ""
@@ -24,7 +26,6 @@ class NewJobViewViewModel: ObservableObject {
         }
         guard let image: CGImage = UIImage(data: data)?.cgImage else {return}
         print(image)
-        //        guard let image: CGImage = UIImage(named: "example3")?.cgImage else {return}
         //         handler creation
         let handler = VNImageRequestHandler(cgImage: image, options: [:])
         // request creation
@@ -46,20 +47,35 @@ class NewJobViewViewModel: ObservableObject {
         } catch {
             print(error)
         }
+        print("This is the document \n")
         print(document)
         // PostProcess VISION output with GPT
-        let prompt =
-        """
-I am a highly intelligent question answering bot who finds the model number and serial number \
- in a document and formats their answer as a JSON object with keys 'Model Number' and 'Serial Number'.
-
-    Document: \(document)
-
-"""
-        self.send(prompt: prompt)
+        let prompt = "What does a constantly lit status code mean?"
+//        self.send(prompt: prompt)
+        
+        // get user id
+        guard let uId = Auth.auth().currentUser?.uid else {return}
+        
+        // create sub collection for user
+        let newID = UUID().uuidString
+        let newJob = PreProcessedJob(id: newID,
+                                 ratingPlateText: document,
+                                 diagnosticQuestion: prompt,
+                                 createdDate: Date().timeIntervalSince1970)
+        // create a document of the preproccesed job
+        let db = Firestore.firestore()
+        db.collection("users")
+            .document(uId)
+            .collection("preProcessedJobs")
+            .document(newID)
+            .setData(newJob.asDictionary())
     }
+    
     func send(prompt: String) {
-        let url = URL(string: "https://api.openai.com/v1/completions")!
+        // a function that will send a prompt to gpt 3.5 and set self.completion to the llm's completion
+        // input: a prompt message of String
+        // output: void
+        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue(
@@ -67,8 +83,7 @@ I am a highly intelligent question answering bot who finds the model number and 
             forHTTPHeaderField: "Authorization"
         )
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //        let json: [String: Any] = ["prompt": constructPrompt(), "max_tokens": 200, "model": "text-davinci-003"]
-        let json: [String: Any] = ["prompt": prompt, "max_tokens": 200, "model": "text-davinci-001", "temperature": 0]
+        let json: [String: Any] = ["messages": [["role": "user", "content": prompt]], "max_tokens": 200, "model": "gpt-3.5-turbo", "temperature": 0]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         request.httpBody = jsonData
         let task = URLSession.shared.dataTask(with: request) {[weak self] data, _, error in
@@ -78,9 +93,12 @@ I am a highly intelligent question answering bot who finds the model number and 
                 } else if let data = data {
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                           //no choices'
                            let choices = json["choices"] as? [[String: Any]],
                            let firstChoice = choices.first,
-                           let rawText = firstChoice["text"] as? String {
+                           let message = firstChoice["message"] as? [String: Any],
+                           let rawText = message["content"] as? String {
+                            print("This is the rawText \n")
                             print(rawText)
                             let text = rawText.replacingOccurrences(of: "'", with: "\"")
                             let result = extractData(from: text)

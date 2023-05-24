@@ -25,7 +25,7 @@
 		F743DACC2A11B31D001FACB9 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DACB2A11B31D001FACB9 /* ChatView.swift */; };
 		F743DACE2A11B340001FACB9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DACD2A11B340001FACB9 /* MessagesView.swift */; };
 		F743DAD12A11BAA4001FACB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD02A11BAA4001FACB9 /* User.swift */; };
-		F743DAD32A11BAB5001FACB9 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD22A11BAB5001FACB9 /* Job.swift */; };
+		F743DAD32A11BAB5001FACB9 /* PreProcessedJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD22A11BAB5001FACB9 /* PreProcessedJob.swift */; };
 		F743DAD62A11BB05001FACB9 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD52A11BB05001FACB9 /* MainViewViewModel.swift */; };
 		F743DAD82A11BB10001FACB9 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD72A11BB10001FACB9 /* ProfileViewViewModel.swift */; };
 		F743DADA2A11BB1C001FACB9 /* NewJobViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAD92A11BB1C001FACB9 /* NewJobViewViewModel.swift */; };
@@ -37,6 +37,8 @@
 		F743DAE82A12E70D001FACB9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE72A12E70D001FACB9 /* Extension.swift */; };
 		F743DAEA2A13059C001FACB9 /* NewJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE92A13059C001FACB9 /* NewJobView.swift */; };
 		F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */; };
+		F7F4883B2A1DBEE80091BB1E /* JobListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4883A2A1DBEE80091BB1E /* JobListItemView.swift */; };
+		F7F4883D2A2305470091BB1E /* PostProcessedJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4883C2A2305470091BB1E /* PostProcessedJob.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,7 @@
 		F743DACB2A11B31D001FACB9 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		F743DACD2A11B340001FACB9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		F743DAD02A11BAA4001FACB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F743DAD22A11BAB5001FACB9 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		F743DAD22A11BAB5001FACB9 /* PreProcessedJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreProcessedJob.swift; sourceTree = "<group>"; };
 		F743DAD52A11BB05001FACB9 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		F743DAD72A11BB10001FACB9 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		F743DAD92A11BB1C001FACB9 /* NewJobViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobViewViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +89,8 @@
 		F743DAE72A12E70D001FACB9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F743DAE92A13059C001FACB9 /* NewJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobView.swift; sourceTree = "<group>"; };
 		F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListViewViewModel.swift; sourceTree = "<group>"; };
+		F7F4883A2A1DBEE80091BB1E /* JobListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListItemView.swift; sourceTree = "<group>"; };
+		F7F4883C2A2305470091BB1E /* PostProcessedJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessedJob.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 				F743DACB2A11B31D001FACB9 /* ChatView.swift */,
 				F743DACD2A11B340001FACB9 /* MessagesView.swift */,
 				F743DAE52A11C127001FACB9 /* HeaderView.swift */,
+				F7F4883A2A1DBEE80091BB1E /* JobListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,7 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				F743DAD02A11BAA4001FACB9 /* User.swift */,
-				F743DAD22A11BAB5001FACB9 /* Job.swift */,
+				F743DAD22A11BAB5001FACB9 /* PreProcessedJob.swift */,
+				F7F4883C2A2305470091BB1E /* PostProcessedJob.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,7 +374,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -379,7 +386,9 @@
 			files = (
 				F743DACE2A11B340001FACB9 /* MessagesView.swift in Sources */,
 				F743DAE62A11C127001FACB9 /* HeaderView.swift in Sources */,
+				F7F4883D2A2305470091BB1E /* PostProcessedJob.swift in Sources */,
 				F743DADC2A11BB27001FACB9 /* LoginViewViewModel.swift in Sources */,
+				F7F4883B2A1DBEE80091BB1E /* JobListItemView.swift in Sources */,
 				F743DA902A106FF4001FACB9 /* MainView.swift in Sources */,
 				F743DAD62A11BB05001FACB9 /* MainViewViewModel.swift in Sources */,
 				F743DAC42A11B29D001FACB9 /* ProfileView.swift in Sources */,
@@ -397,7 +406,7 @@
 				F743DACC2A11B31D001FACB9 /* ChatView.swift in Sources */,
 				F743DAC82A11B2C2001FACB9 /* LoginView.swift in Sources */,
 				F743DAC62A11B2B9001FACB9 /* JobsListView.swift in Sources */,
-				F743DAD32A11BAB5001FACB9 /* Job.swift in Sources */,
+				F743DAD32A11BAB5001FACB9 /* PreProcessedJob.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
