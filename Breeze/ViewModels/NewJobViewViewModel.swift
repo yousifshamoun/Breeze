@@ -46,6 +46,7 @@ class NewJobViewViewModel: ObservableObject {
         } catch {
             print(error)
         }
+        print("This is the document \n")
         print(document)
         // PostProcess VISION output with GPT
         let prompt =
@@ -59,7 +60,7 @@ I am a highly intelligent question answering bot who finds the model number and 
         self.send(prompt: prompt)
     }
     func send(prompt: String) {
-        let url = URL(string: "https://api.openai.com/v1/completions")!
+        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue(
@@ -67,8 +68,7 @@ I am a highly intelligent question answering bot who finds the model number and 
             forHTTPHeaderField: "Authorization"
         )
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        //        let json: [String: Any] = ["prompt": constructPrompt(), "max_tokens": 200, "model": "text-davinci-003"]
-        let json: [String: Any] = ["prompt": prompt, "max_tokens": 200, "model": "text-davinci-001", "temperature": 0]
+        let json: [String: Any] = ["messages": [["role": "user", "content": prompt]], "max_tokens": 200, "model": "gpt-3.5-turbo", "temperature": 0]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         request.httpBody = jsonData
         let task = URLSession.shared.dataTask(with: request) {[weak self] data, _, error in
@@ -78,9 +78,12 @@ I am a highly intelligent question answering bot who finds the model number and 
                 } else if let data = data {
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                           //no choices'
                            let choices = json["choices"] as? [[String: Any]],
                            let firstChoice = choices.first,
-                           let rawText = firstChoice["text"] as? String {
+                           let message = firstChoice["message"] as? [String: Any],
+                           let rawText = message["content"] as? String {
+                            print("This is the rawText \n")
                             print(rawText)
                             let text = rawText.replacingOccurrences(of: "'", with: "\"")
                             let result = extractData(from: text)

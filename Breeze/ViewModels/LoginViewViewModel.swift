@@ -12,20 +12,15 @@ class LoginViewViewModel: ObservableObject {
     @Published var password = ""
     @Published var errorMessage = ""
     init() {}
-     
     private func insertUserRecord(id: String) {}
     func login() {
         guard validate() else {
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            guard let userID = result?.user.uid else {
-                return
-            }
+            guard let userID = result?.user.uid else {return}
             self?.insertUserRecord(id: userID)
-            
         }
-        
     }
     func validate() -> Bool {
         guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -39,6 +34,5 @@ class LoginViewViewModel: ObservableObject {
             return false
         }
         return true
-        
     }
 }
