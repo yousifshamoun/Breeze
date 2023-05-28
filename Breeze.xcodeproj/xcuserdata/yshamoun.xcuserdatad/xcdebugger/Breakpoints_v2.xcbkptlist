@@ -14,8 +14,13 @@
             filePath = "Breeze/ViewModels/NewJobViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "76"
             endingLineNumber = "76"
+=======
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+>>>>>>> origin/main
             landmarkName = "send(prompt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +35,13 @@
             filePath = "Breeze/ViewModels/NewJobViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "93"
             endingLineNumber = "93"
+=======
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+>>>>>>> origin/main
             landmarkName = "send(prompt:)"
             landmarkType = "7">
             <Locations>

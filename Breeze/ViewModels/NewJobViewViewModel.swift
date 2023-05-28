@@ -70,9 +70,12 @@ class NewJobViewViewModel: ObservableObject {
     }
     
     func send(prompt: String) {
+<<<<<<< HEAD
         // a function that will send a prompt to gpt 3.5 and set self.completion to the llm's completion
         // input: a prompt message of String
         // output: void
+=======
+>>>>>>> origin/main
         let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
