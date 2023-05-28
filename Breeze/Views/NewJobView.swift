@@ -25,15 +25,27 @@ struct NewJobView: View {
                     Image(uiImage: uiimage)
                         .resizable()
                         .frame(width: UIScreen.main.bounds.width,
-                               height: 300)
+                               height: 250)
+                } else {
+                    Image(uiImage: UIImage(named: "tankPlate")!)
+                        .resizable()
                 }
                 PhotosPicker(
                     selection: $ratingPlateImage,
                     maxSelectionCount: 1,
                     matching: .images
                 ) {
-                    Text("Pick Photo")
+                    HStack{
+                        Spacer()
+                        Text("Select picture")
+                            .bold()
+                            .font(.system(size: 16))
+                        Image(systemName: "camera.fill")
+                        Spacer()
+                    }
+                    .padding()
                 }
+                .listRowSeparator(.hidden)
                 .onChange(of: ratingPlateImage) { newValue in
                     guard let item = ratingPlateImage.first else {return}
                     item .loadTransferable(type: Data.self) { result in
@@ -49,35 +61,26 @@ struct NewJobView: View {
                         }
                     }
                 }
-                Button {
-                    viewModel.recognizeText(data: data)
-                    newJobPresented = false
-                    
-                }
-            label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color.blue)
-                    Text("Submit")
-                        .bold()
-                        .foregroundColor(Color.white)
-                        .padding(1)
+                TextField("Ask any question... ", text: $viewModel.diagnosticQuestion)
+                    .padding(.bottom)
+            }
+            Button {
+                viewModel.recognizeText(data: data)
+                newJobPresented = false
+            }
+        label: {
+            ZStack {
+                HStack {
+                    Spacer()
+                    Image(systemName: "paperplane.circle.fill")
+                        .resizable()
+                        .frame(width: 50,
+                               height: 50)
+                    Spacer()
                 }
             }
-            .padding()
-//                if viewModel.completion.isEmpty && loading {
-//                    HStack {
-//                        Spacer()
-//                        ProgressView()
-//                            .scaleEffect(2)
-//                        Spacer()
-//                    }
-//                }
-                Text(viewModel.completion)
-                    .font(.system(size: 18))
-                    .foregroundColor(Color.black)
-                    .padding()
-            }
+        }
+        .padding(.top)
         }
     }
 }
@@ -87,6 +90,8 @@ struct NewJobView_Previews: PreviewProvider {
         NewJobView(newJobPresented: Binding(get: {
             return true
         }, set: { _ in
-        }))
+        })
+        )
+        
     }
 }

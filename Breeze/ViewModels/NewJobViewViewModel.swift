@@ -15,6 +15,7 @@ import FirebaseFirestore
 class NewJobViewViewModel: ObservableObject {
     @Published var loading: Bool = false
     @Published var completion: String = ""
+    @Published var diagnosticQuestion = ""
     //    @Published var ratingPlateImage: [PhotosPickerItem] = []
     //    @Published var data: Data?
     init() {}
@@ -49,10 +50,7 @@ class NewJobViewViewModel: ObservableObject {
         }
         print("This is the document \n")
         print(document)
-        // PostProcess VISION output with GPT
-        let prompt = "What does a constantly lit status code mean?"
-//        self.send(prompt: prompt)
-        
+      
         // get user id
         guard let uId = Auth.auth().currentUser?.uid else {return}
         
@@ -60,7 +58,7 @@ class NewJobViewViewModel: ObservableObject {
         let newID = UUID().uuidString
         let newJob = PreProcessedJob(id: newID,
                                  ratingPlateText: document,
-                                 diagnosticQuestion: prompt,
+                                     diagnosticQuestion: self.diagnosticQuestion,
                                  createdDate: Date().timeIntervalSince1970)
         // create a document of the preproccesed job
         let db = Firestore.firestore()

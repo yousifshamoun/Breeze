@@ -9,8 +9,8 @@ import SwiftUI
 
 struct JobListItemView: View {
     let job: PostProcessedJob
+    @StateObject var viewModel = JobListItemViewModel()
     var body: some View {
-        
         HStack {
             VStack(alignment: .leading) {
                 
@@ -28,6 +28,7 @@ struct JobListItemView: View {
             }
             Spacer()
             Button {
+                viewModel.deleteFromPost(dId: job.id)
                 
             } label: {
                 Text("View")

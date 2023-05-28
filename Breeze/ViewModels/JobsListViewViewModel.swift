@@ -6,8 +6,9 @@
 //
 
 import Foundation
-
+import FirebaseAuth
+import FirebaseFirestore
 class JobsListViewViewModel: ObservableObject {
     @Published var showingNewJobView: Bool = false
     init() {}
-}
+    }

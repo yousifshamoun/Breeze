@@ -16,6 +16,7 @@ struct JobsListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
                 List(jobs) { job in
 //                    Text(job.diagnosticAnswer)
                    JobListItemView(job: job)

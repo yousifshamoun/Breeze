@@ -39,6 +39,7 @@
 		F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */; };
 		F7F4883B2A1DBEE80091BB1E /* JobListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4883A2A1DBEE80091BB1E /* JobListItemView.swift */; };
 		F7F4883D2A2305470091BB1E /* PostProcessedJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4883C2A2305470091BB1E /* PostProcessedJob.swift */; };
+		F7F4883F2A232BAE0091BB1E /* JobListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4883E2A232BAE0091BB1E /* JobListItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListViewViewModel.swift; sourceTree = "<group>"; };
 		F7F4883A2A1DBEE80091BB1E /* JobListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListItemView.swift; sourceTree = "<group>"; };
 		F7F4883C2A2305470091BB1E /* PostProcessedJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProcessedJob.swift; sourceTree = "<group>"; };
+		F7F4883E2A232BAE0091BB1E /* JobListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				F743DAE12A11BB55001FACB9 /* ChatViewViewModel.swift */,
 				F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */,
 				F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */,
+				F7F4883E2A232BAE0091BB1E /* JobListItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */,
 				F743DACA2A11B2DA001FACB9 /* RegisterView.swift in Sources */,
 				F743DAE22A11BB55001FACB9 /* ChatViewViewModel.swift in Sources */,
+				F7F4883F2A232BAE0091BB1E /* JobListItemViewModel.swift in Sources */,
 				F743DAD12A11BAA4001FACB9 /* User.swift in Sources */,
 				F743DAE82A12E70D001FACB9 /* Extension.swift in Sources */,
 				F743DADA2A11BB1C001FACB9 /* NewJobViewViewModel.swift in Sources */,
