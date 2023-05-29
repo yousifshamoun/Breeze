@@ -52,11 +52,13 @@ struct NewJobView: View {
                         switch result {
                         case .success(let data):
                             if let data = data {
+                                viewModel.recognizeText(data: data)
                                 self.data = data
                             } else {
                                 print("data is nil")
                             }
                         case .failure(let failure):
+                            print(failure)
                             fatalError("failure")
                         }
                     }
@@ -65,7 +67,7 @@ struct NewJobView: View {
                     .padding(.bottom)
             }
             Button {
-                viewModel.recognizeText(data: data)
+                viewModel.sendQuestion()
                 newJobPresented = false
             }
         label: {

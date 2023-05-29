@@ -14,4 +14,5 @@ struct PostProcessedJob: Codable, Identifiable {
     let usedSpecificNamespace: String
     let diagnosticQuestion: String
     let diagnosticAnswer: String
+    let status: String
 }

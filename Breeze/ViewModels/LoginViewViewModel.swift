@@ -14,18 +14,8 @@ class LoginViewViewModel: ObservableObject {
     init() {}
     private func insertUserRecord(id: String) {}
     func login() {
-<<<<<<< HEAD
         guard validate() else {return}
         Auth.auth().signIn(withEmail: email, password: password)
-=======
-        guard validate() else {
-            return
-        }
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            guard let userID = result?.user.uid else {return}
-            self?.insertUserRecord(id: userID)
-        }
->>>>>>> origin/main
     }
     func validate() -> Bool {
         guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
