@@ -13,14 +13,23 @@ struct JobsListView: View {
     }
     @StateObject var viewModel = JobsListViewViewModel()
     @FirestoreQuery var jobs: [PostProcessedJob]
+    @State var path: [PostProcessedJob] = []
     var body: some View {
         NavigationView {
             VStack {
-                
-                List(jobs) { job in
-//                    Text(job.diagnosticAnswer)
-                   JobListItemView(job: job)
-                }.listStyle(PlainListStyle())
+                NavigationStack(path: $path) {
+                    List(jobs) { job in
+                        VStack {
+                            NavigationLink(value: job) {
+                                JobListItemView(job: job)
+                            }
+                        }
+                    }
+                    .navigationDestination(for: PostProcessedJob.self) {job in
+                        EstimateView(job: job, path: $path)
+                    }
+                    .listStyle(PlainListStyle())
+                }
              }
             .navigationTitle("Jobs List")
             .toolbar {
@@ -34,8 +43,7 @@ struct JobsListView: View {
                 NewJobView(newJobPresented:
                             $viewModel.showingNewJobView)
             }
-        }.onAppear(
-            perform: {print("jobs: ", self._jobs)})
+        }
     }
 }
 struct JobsListView_Previews: PreviewProvider {

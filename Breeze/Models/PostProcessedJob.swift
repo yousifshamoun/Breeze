@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostProcessedJob: Codable, Identifiable {
+struct PostProcessedJob: Codable, Identifiable, Hashable {
     let id: String
     let serialNumber: String
     let modelNumber: String
@@ -15,4 +15,5 @@ struct PostProcessedJob: Codable, Identifiable {
     let diagnosticQuestion: String
     let diagnosticAnswer: String
     let status: String
+    let createdDate: TimeInterval
 }

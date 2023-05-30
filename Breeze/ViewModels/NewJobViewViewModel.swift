@@ -25,7 +25,6 @@ class NewJobViewViewModel: ObservableObject {
             print("no data")
             return
         }
-        
         guard let image: CGImage = UIImage(data: data)?.cgImage else {return}
         print(image)
         //         handler creation

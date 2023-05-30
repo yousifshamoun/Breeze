@@ -12,8 +12,6 @@ struct NewJobView: View {
     @StateObject var viewModel = NewJobViewViewModel()
     @State var ratingPlateImage: [PhotosPickerItem] = []
     @State var data: Data?
-    var spinner = UIActivityIndicatorView(style: .large)
-    @State var loading = false
     var body: some View {
         VStack {
             Text("New Job")
@@ -21,71 +19,76 @@ struct NewJobView: View {
                 .bold()
                 .padding(.top)
             Form {
-                if let data = data, let uiimage = UIImage(data: data) {
-                    Image(uiImage: uiimage)
-                        .resizable()
-                        .frame(width: UIScreen.main.bounds.width,
-                               height: 250)
-                } else {
-                    Image(uiImage: UIImage(named: "tankPlate")!)
-                        .resizable()
-                }
-                PhotosPicker(
-                    selection: $ratingPlateImage,
-                    maxSelectionCount: 1,
-                    matching: .images
-                ) {
-                    HStack{
-                        Spacer()
-                        Text("Select picture")
-                            .bold()
-                            .font(.system(size: 16))
-                        Image(systemName: "camera.fill")
-                        Spacer()
+                Section {
+                    if let data = data, let uiimage = UIImage(data: data) {
+                        Image(uiImage: uiimage)
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width,
+                                   height: 200)
+                    } else {
+                        Image(uiImage: UIImage(named: "tankPlate")!)
+                            .resizable()
+                            .frame(width: UIScreen.main.bounds.width,
+                                   height: 200)
                     }
-                    .padding()
-                }
-                .listRowSeparator(.hidden)
-                .onChange(of: ratingPlateImage) { newValue in
-                    guard let item = ratingPlateImage.first else {return}
-                    item .loadTransferable(type: Data.self) { result in
-                        switch result {
-                        case .success(let data):
-                            if let data = data {
-                                viewModel.recognizeText(data: data)
-                                self.data = data
-                            } else {
-                                print("data is nil")
-                            }
-                        case .failure(let failure):
-                            print(failure)
-                            fatalError("failure")
+                    PhotosPicker(
+                        selection: $ratingPlateImage,
+                        maxSelectionCount: 1,
+                        matching: .images
+                    ) {
+                        HStack{
+                            Spacer()
+                            Text("Select picture")
+                                .bold()
+                                .font(.system(size: 16))
+                            Image(systemName: "camera.fill")
+                            Spacer()
                         }
                     }
+                    .onChange(of: ratingPlateImage) { newValue in
+                        guard let item = ratingPlateImage.first else {return}
+                        item .loadTransferable(type: Data.self) { result in
+                            switch result {
+                            case .success(let data):
+                                if let data = data {
+                                    viewModel.recognizeText(data: data)
+                                    self.data = data
+                                } else {
+                                    print("data is nil")
+                                }
+                            case .failure(let failure):
+                                print(failure)
+                                fatalError("failure")
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Take a picture of your rating plate: ")
                 }
                 TextField("Ask any question... ", text: $viewModel.diagnosticQuestion)
-                    .padding(.bottom)
-            }
-            Button {
-                viewModel.sendQuestion()
-                newJobPresented = false
-            }
-        label: {
-            ZStack {
-                HStack {
-                    Spacer()
-                    Image(systemName: "paperplane.circle.fill")
-                        .resizable()
-                        .frame(width: 50,
-                               height: 50)
-                    Spacer()
+                .padding(.vertical)
+                Section {
+                    Button {
+                        viewModel.sendQuestion()
+                        newJobPresented = false
+                    }
+                label: {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "paperplane.circle.fill")
+                            .resizable()
+                            .frame(width: 50,
+                                   height: 50)
+                        Spacer()
+                    }
                 }
+                }
+                .listRowBackground(Color.clear)
             }
-        }
-        .padding(.top)
         }
     }
 }
+    
 
 struct NewJobView_Previews: PreviewProvider {
     static var previews: some View {
@@ -94,6 +97,10 @@ struct NewJobView_Previews: PreviewProvider {
         }, set: { _ in
         })
         )
-        
     }
 }
+
+
+    
+
+

@@ -14,35 +14,59 @@ struct JobListItemView: View {
         HStack {
             VStack(alignment: .leading) {
                 
-                Text("Model: " + job.modelNumber)
-        
+                HStack {
+                    Text("Model: " + job.modelNumber)
+                    if job.status == "ACTIVE" {
+                        Spacer()
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: 90, height: 25)
+                                .foregroundColor(Color.green.opacity(0.7))
+                            
+                            HStack {
+                                Circle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(.green)
+                                Text("Active")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                        }
+                    }
+                }
+                
                 Text(job.diagnosticQuestion)
                 //                    .font(.footnote)
                 //                    .foregroundColor(Color(.secondaryLabel))
-                if job.status == "COMPLETE" {
+                if job.status == "PENDING" {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            ProgressView()
+                                .scaleEffect(2)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                } else {
                     Text(job.diagnosticAnswer)
                         .font(.footnote)
                         .foregroundColor(Color(.secondaryLabel))
                     Text(job.usedSpecificNamespace)
                         .font(.footnote)
                         .foregroundColor(Color(.secondaryLabel))
-                } else {
-                    HStack {
-                        Spacer()
-                        ProgressView()
-                            .scaleEffect(2)
-                        Spacer()
-                    }
                 }
             }
-            Spacer()
-            Button {
+        }
+        .swipeActions {
+            Button("Delete") {
                 viewModel.deleteFromPost(dId: job.id)
-            } label: {
-                Text("View")
             }
+            .tint(.red)
         }
     }
+    
 }
 
 struct JobListItemView_Previews: PreviewProvider {
@@ -53,7 +77,8 @@ struct JobListItemView_Previews: PreviewProvider {
                                    usedSpecificNamespace: "Yes",
                                    diagnosticQuestion: "The status light is not flashing. Why?",
                                    diagnosticAnswer: "There could be several reasons for not getting hot water in the bath tub. One possibility is that the faucet or shower control has a defective Thermostatic Mixing Valve, which can reduce the amount of hot water delivered even though there is plenty of hot water in the tank. Another possibility is that the water heater is undersized for your needs or is too far away from the bath tub, causing the cold water already in the pipes to flow out before the hot water reaches the faucet. It is also important to check if the water temperature is set too low or if there is an error code flashing on the display panel.",
-                                   status: "PENDING"
+                                   status: "ACTIVE",
+                                   createdDate: 1685409262
                                   ))
     }
 }
