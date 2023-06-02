@@ -7,7 +7,7 @@
 import FirebaseCore
 import SwiftUI
 
- @main
+@main
 struct BreezeApp: App {
     init() {
         FirebaseApp.configure()

@@ -9,7 +9,8 @@ import SwiftUI
 import FirebaseFirestoreSwift
 struct JobsListView: View {
     init(userID: String) {
-        self._jobs = FirestoreQuery(collectionPath: "users/\(userID)/postProcessedJobs")
+        self._jobs = FirestoreQuery(collectionPath: "users/\(userID)/postProcessedJobs",
+                                    predicates: [.order(by: "createdDate", descending: true)])
     }
     @StateObject var viewModel = JobsListViewViewModel()
     @FirestoreQuery var jobs: [PostProcessedJob]
@@ -25,13 +26,13 @@ struct JobsListView: View {
                             }
                         }
                     }
+                    .navigationTitle("Jobs List")
                     .navigationDestination(for: PostProcessedJob.self) {job in
                         EstimateView(job: job, path: $path)
                     }
                     .listStyle(PlainListStyle())
                 }
              }
-            .navigationTitle("Jobs List")
             .toolbar {
                 Button {
                     viewModel.showingNewJobView = true

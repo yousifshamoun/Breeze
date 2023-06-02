@@ -16,6 +16,10 @@ struct MainView: View {
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
+                MessagesView(uId: viewModel.currentUserID)
+                    .tabItem {
+                        Label("Messages" ,systemImage: "envelope.fill")
+                    }
                 ProfileView()
                     .tabItem {
                         Label("Profile", systemImage: "person.circle")

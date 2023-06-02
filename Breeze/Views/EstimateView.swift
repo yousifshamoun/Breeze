@@ -18,16 +18,18 @@ struct EstimateView: View {
     @Binding var path: [PostProcessedJob]
     @StateObject var viewModel = EstimateViewViewModel()
     var body: some View {
-        VStack {
-            QuestionAndAnswerView(job: job)
-            // If no estimates are on screen, push show estimate button to bottom
-            if !viewModel.estimateIsShowing{
-                Spacer()
+        ScrollView{
+            VStack {
+                    QuestionAndAnswerView(job: job)
+                    // If no estimates are on screen, push show estimate button to bottom
+                    if !viewModel.estimateIsShowing{
+                        Spacer()
+                    }
+                    EstimatesListView(viewModel: viewModel, path: $path, job:job)
             }
-            EstimatesListView(viewModel: viewModel, path: $path, job:job)
+            .navigationTitle("\(Date(timeIntervalSince1970: job.createdDate).formatted(date:.abbreviated, time:.omitted))")
+            .padding(.horizontal)
         }
-        .navigationTitle("\(Date(timeIntervalSince1970: job.createdDate).formatted(date:.abbreviated, time:.omitted))")
-        .padding(.horizontal)
     }
 }
 
@@ -36,29 +38,31 @@ struct QuestionAndAnswerView: View {
     let job: PostProcessedJob
     var body: some View {
         VStack {
-            HStack{
-                Spacer()
-                HStack {
-                    Text(job.diagnosticQuestion)
-                        .foregroundColor(.white)
-                        .font(.custom("Roboto-Regular", size: 18))
+            ScrollView {
+                HStack{
+                    Spacer()
+                    HStack {
+                        Text(job.diagnosticQuestion)
+                            .foregroundColor(.white)
+                            .font(.custom("Roboto-Regular", size: 18))
+                        
+                    }
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(8)
+                }
+                HStack{
+                    HStack {
+                        Text(job.diagnosticAnswer)
+                            .foregroundColor(.black)
+                            .font(.custom("Roboto-Regular", size: 18))
+                    }
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
                     
+                    Spacer()
                 }
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(8)
-            }
-            HStack{
-                HStack {
-                    Text(job.diagnosticAnswer)
-                        .foregroundColor(.black)
-                        .font(.custom("Roboto-Regular", size: 18))
-                }
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                
-                Spacer()
             }
         }
     }
@@ -66,7 +70,8 @@ struct QuestionAndAnswerView: View {
 
 struct EstimatesListView: View {
     let estimates: [Estimate] = [.case1, .case2]
-    @StateObject var viewModel: EstimateViewViewModel
+    let urgencies: [String] = ["Low", "Normal", "High"]
+    @ObservedObject var viewModel: EstimateViewViewModel
     @Binding var path: [PostProcessedJob]
     let job: PostProcessedJob
     var body: some View {
@@ -77,7 +82,7 @@ struct EstimatesListView: View {
                 } label : {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color.yellow.opacity(0.8))
+                            .foregroundColor(Color.orange.opacity(0.8))
                             .frame(width: 200, height: 50)
                         Text("Show Estimate")
                             .foregroundColor(.white)
@@ -99,25 +104,75 @@ struct EstimatesListView: View {
                             }
                         }
                     }
-                    // Call to Action
+                    .frame(height: 450)
                     if job.status != "ACTIVE" {
+                    // Homeowner info form
+                    VStack {
+                        VStack(alignment: .leading) {
+                            Text("Address")
+                                .font(.headline)
+                            TextField("Enter home address", text: $viewModel.address)
+                                .padding(.all)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                .background(Color.gray.opacity(0.2))
+                        }
+                        .padding(.horizontal, 15)
+                        VStack(alignment: .leading) {
+                            Text("Zipcode")
+                                .font(.headline)
+                            TextField("Enter Zipcode", text: $viewModel.zipCode)
+                                .padding(.all)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                .background(Color.gray.opacity(0.2))
+                        }
+                        .padding(.horizontal, 15)
+                        VStack(alignment: .leading) {
+                            Text("Issue(s)")
+                                .font(.headline)
+                            TextField("Enter issues with water heater", text: $viewModel.customerIssues)
+                                .padding(.all)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                .background(Color.gray.opacity(0.2))
+                        }
+                        .padding(.horizontal, 15)
+                        VStack(alignment: .leading) {
+                            Text("Job Urgency")
+                                .font(.headline)
+                            Picker("Water heater location", selection: $viewModel.jobUrgency) {
+                                ForEach(urgencies, id: \.self) {
+                                    Text($0)
+                                }
+                            }
+                            .pickerStyle(.segmented)
+                        }
+                        .padding(.horizontal, 15)
+                        VStack(alignment: .leading) {
+                            Text("Additional Notes (Optional)")
+                                .font(.headline)
+                            TextField("", text: $viewModel.additionalNotes)
+                                .padding(.all)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                .background(Color.gray.opacity(0.2))
+                        }
+                        .padding(.horizontal, 15)
+                    }
+                    // Call to Action
                         Button {
                             viewModel.setJobActive(job: job)
-                            path = []
+                            if viewModel.validate() {
+                                path = []
+                            }
                         } label: {
-                            
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(Color.yellow.opacity(0.8))
+                                    .foregroundColor(Color.orange.opacity(0.8))
                                     .frame(width: 200, height: 50)
-                                Text("Get Offers")
+                                Text("Get Quotes")
                                     .foregroundColor(.white)
                                     .font(.custom("Roboto-Bold", size: 18))
                             }
                         }
                     }
-                    
-                    
                 }
             }
         }
@@ -150,6 +205,6 @@ struct ChatView_Previews: PreviewProvider {
             return []
         }, set: { _ in
         }))
-        
+
     }
 }

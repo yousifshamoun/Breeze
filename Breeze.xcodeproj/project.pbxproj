@@ -42,6 +42,11 @@
 		F7F4883F2A232BAE0091BB1E /* JobListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4883E2A232BAE0091BB1E /* JobListItemViewModel.swift */; };
 		F7F488452A259E580091BB1E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7F488442A259E580091BB1E /* Roboto-Regular.ttf */; };
 		F7F488472A259E630091BB1E /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7F488462A259E630091BB1E /* Roboto-Bold.ttf */; };
+		F7F488B12A2803D50091BB1E /* ActiveJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488B02A2803D50091BB1E /* ActiveJob.swift */; };
+		F7F488B32A2804510091BB1E /* MutualJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488B22A2804510091BB1E /* MutualJob.swift */; };
+		F7F488B92A29377D0091BB1E /* MessagesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488B82A29377D0091BB1E /* MessagesListItemView.swift */; };
+		F7F488BB2A293C2F0091BB1E /* MessageFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488BA2A293C2F0091BB1E /* MessageFullView.swift */; };
+		F7F488BF2A2961780091BB1E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488BE2A2961780091BB1E /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +103,11 @@
 		F7F488412A259C9D0091BB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7F488442A259E580091BB1E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F7F488462A259E630091BB1E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F7F488B02A2803D50091BB1E /* ActiveJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveJob.swift; sourceTree = "<group>"; };
+		F7F488B22A2804510091BB1E /* MutualJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutualJob.swift; sourceTree = "<group>"; };
+		F7F488B82A29377D0091BB1E /* MessagesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListItemView.swift; sourceTree = "<group>"; };
+		F7F488BA2A293C2F0091BB1E /* MessageFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFullView.swift; sourceTree = "<group>"; };
+		F7F488BE2A2961780091BB1E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +161,7 @@
 		F743DA8C2A106FF4001FACB9 /* Breeze */ = {
 			isa = PBXGroup;
 			children = (
+				F7F488C02A2A87420091BB1E /* Components */,
 				F7F488412A259C9D0091BB1E /* Info.plist */,
 				F7F488402A259B070091BB1E /* Fonts */,
 				F743DAD42A11BAED001FACB9 /* ViewModels */,
@@ -201,8 +212,9 @@
 				F743DAC92A11B2DA001FACB9 /* RegisterView.swift */,
 				F743DACB2A11B31D001FACB9 /* EstimateView.swift */,
 				F743DACD2A11B340001FACB9 /* MessagesView.swift */,
-				F743DAE52A11C127001FACB9 /* HeaderView.swift */,
 				F7F4883A2A1DBEE80091BB1E /* JobListItemView.swift */,
+				F7F488B82A29377D0091BB1E /* MessagesListItemView.swift */,
+				F7F488BA2A293C2F0091BB1E /* MessageFullView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +225,9 @@
 				F743DAD02A11BAA4001FACB9 /* User.swift */,
 				F743DAD22A11BAB5001FACB9 /* PreProcessedJob.swift */,
 				F7F4883C2A2305470091BB1E /* PostProcessedJob.swift */,
+				F7F488B02A2803D50091BB1E /* ActiveJob.swift */,
+				F7F488B22A2804510091BB1E /* MutualJob.swift */,
+				F7F488BE2A2961780091BB1E /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +255,14 @@
 				F7F488462A259E630091BB1E /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F7F488C02A2A87420091BB1E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F743DAE52A11C127001FACB9 /* HeaderView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +432,7 @@
 				F743DAE62A11C127001FACB9 /* HeaderView.swift in Sources */,
 				F7F4883D2A2305470091BB1E /* PostProcessedJob.swift in Sources */,
 				F743DADC2A11BB27001FACB9 /* LoginViewViewModel.swift in Sources */,
+				F7F488BF2A2961780091BB1E /* Message.swift in Sources */,
 				F7F4883B2A1DBEE80091BB1E /* JobListItemView.swift in Sources */,
 				F743DA902A106FF4001FACB9 /* MainView.swift in Sources */,
 				F743DAD62A11BB05001FACB9 /* MainViewViewModel.swift in Sources */,
@@ -417,14 +441,18 @@
 				F743DAE42A11BB5F001FACB9 /* MessagesViewViewModel.swift in Sources */,
 				F743DA8E2A106FF4001FACB9 /* BreezeApp.swift in Sources */,
 				F743DAD82A11BB10001FACB9 /* ProfileViewViewModel.swift in Sources */,
+				F7F488B12A2803D50091BB1E /* ActiveJob.swift in Sources */,
 				F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */,
 				F743DACA2A11B2DA001FACB9 /* RegisterView.swift in Sources */,
+				F7F488B32A2804510091BB1E /* MutualJob.swift in Sources */,
+				F7F488B92A29377D0091BB1E /* MessagesListItemView.swift in Sources */,
 				F743DAE22A11BB55001FACB9 /* EstimateViewViewModel.swift in Sources */,
 				F7F4883F2A232BAE0091BB1E /* JobListItemViewModel.swift in Sources */,
 				F743DAD12A11BAA4001FACB9 /* User.swift in Sources */,
 				F743DAE82A12E70D001FACB9 /* Extension.swift in Sources */,
 				F743DADA2A11BB1C001FACB9 /* NewJobViewViewModel.swift in Sources */,
 				F743DAEA2A13059C001FACB9 /* NewJobView.swift in Sources */,
+				F7F488BB2A293C2F0091BB1E /* MessageFullView.swift in Sources */,
 				F743DACC2A11B31D001FACB9 /* EstimateView.swift in Sources */,
 				F743DAC82A11B2C2001FACB9 /* LoginView.swift in Sources */,
 				F743DAC62A11B2B9001FACB9 /* JobsListView.swift in Sources */,

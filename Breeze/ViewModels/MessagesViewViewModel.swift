@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import FirebaseAuth
+
+class MessagesViewViewModel: ObservableObject {
+    init() {}
+}

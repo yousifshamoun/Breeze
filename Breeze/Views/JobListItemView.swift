@@ -13,7 +13,6 @@ struct JobListItemView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                
                 HStack {
                     Text("Model: " + job.modelNumber)
                     if job.status == "ACTIVE" {
@@ -66,7 +65,6 @@ struct JobListItemView: View {
             .tint(.red)
         }
     }
-    
 }
 
 struct JobListItemView_Previews: PreviewProvider {
