@@ -13,6 +13,7 @@ struct ProfileView: View {
         NavigationView {
             VStack {
                 // Avatar
+                // TODO: Impove UI and add an option to upload profile pictures
                 if let user = viewModel.user {
                     Image(systemName: "person.circle")
                         .resizable()

@@ -23,7 +23,7 @@ struct MessagesView: View {
                     }
                     .navigationTitle("Messages")
                     .navigationDestination(for: MutualJob.self) { job in
-                        MessageFullView(mutualJob: job)
+                        MessageFullView(mutualJobId: job.id)
                     }
                     .listStyle(PlainListStyle())
                     

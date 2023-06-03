@@ -10,6 +10,8 @@ import Foundation
 struct Message: Identifiable, Codable, Hashable {
     let id: String
     let text: String
-    let recieved: Bool
+    // true -> sent by technician
+    // false -> sent by homeowner
+    let received: Bool
     let timeSent: TimeInterval
 }

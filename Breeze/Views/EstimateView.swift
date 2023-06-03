@@ -18,6 +18,7 @@ struct EstimateView: View {
     @Binding var path: [PostProcessedJob]
     @StateObject var viewModel = EstimateViewViewModel()
     var body: some View {
+        // TODO: Add chat functionality to make the LLM a chat bot instead of a completion bot
         ScrollView{
             VStack {
                     QuestionAndAnswerView(job: job)
@@ -93,6 +94,7 @@ struct EstimatesListView: View {
             if viewModel.estimateIsShowing {
                 VStack {
                     // Estimates list
+                    // TODO: Add an actual model for getting custom estimates for jobs instead of these placeholders
                     List(estimates, children: \.items) { item in
                         VStack {
                             HStack {
@@ -107,6 +109,8 @@ struct EstimatesListView: View {
                     .frame(height: 450)
                     if job.status != "ACTIVE" {
                     // Homeowner info form
+                        
+                    // TODO: Replace the Textfields with the CustomTextField component for better typing and UI
                     VStack {
                         VStack(alignment: .leading) {
                             Text("Address")

@@ -32,7 +32,7 @@
 		F743DADC2A11BB27001FACB9 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DADB2A11BB27001FACB9 /* LoginViewViewModel.swift */; };
 		F743DADE2A11BB43001FACB9 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DADD2A11BB43001FACB9 /* RegisterViewViewModel.swift */; };
 		F743DAE22A11BB55001FACB9 /* EstimateViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE12A11BB55001FACB9 /* EstimateViewViewModel.swift */; };
-		F743DAE42A11BB5F001FACB9 /* MessagesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */; };
+		F743DAE42A11BB5F001FACB9 /* MessageFullViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE32A11BB5F001FACB9 /* MessageFullViewViewModel.swift */; };
 		F743DAE62A11C127001FACB9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE52A11C127001FACB9 /* HeaderView.swift */; };
 		F743DAE82A12E70D001FACB9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE72A12E70D001FACB9 /* Extension.swift */; };
 		F743DAEA2A13059C001FACB9 /* NewJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743DAE92A13059C001FACB9 /* NewJobView.swift */; };
@@ -47,6 +47,8 @@
 		F7F488B92A29377D0091BB1E /* MessagesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488B82A29377D0091BB1E /* MessagesListItemView.swift */; };
 		F7F488BB2A293C2F0091BB1E /* MessageFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488BA2A293C2F0091BB1E /* MessageFullView.swift */; };
 		F7F488BF2A2961780091BB1E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488BE2A2961780091BB1E /* Message.swift */; };
+		F7F488C22A2A93470091BB1E /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488C12A2A93470091BB1E /* MessageBubble.swift */; };
+		F7F488C42A2A9C380091BB1E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F488C32A2A9C380091BB1E /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +94,7 @@
 		F743DADB2A11BB27001FACB9 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		F743DADD2A11BB43001FACB9 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 		F743DAE12A11BB55001FACB9 /* EstimateViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateViewViewModel.swift; sourceTree = "<group>"; };
-		F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewViewModel.swift; sourceTree = "<group>"; };
+		F743DAE32A11BB5F001FACB9 /* MessageFullViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFullViewViewModel.swift; sourceTree = "<group>"; };
 		F743DAE52A11C127001FACB9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F743DAE72A12E70D001FACB9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F743DAE92A13059C001FACB9 /* NewJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJobView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,8 @@
 		F7F488B82A29377D0091BB1E /* MessagesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListItemView.swift; sourceTree = "<group>"; };
 		F7F488BA2A293C2F0091BB1E /* MessageFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFullView.swift; sourceTree = "<group>"; };
 		F7F488BE2A2961780091BB1E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F7F488C12A2A93470091BB1E /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		F7F488C32A2A9C380091BB1E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +245,7 @@
 				F743DADB2A11BB27001FACB9 /* LoginViewViewModel.swift */,
 				F743DADD2A11BB43001FACB9 /* RegisterViewViewModel.swift */,
 				F743DAE12A11BB55001FACB9 /* EstimateViewViewModel.swift */,
-				F743DAE32A11BB5F001FACB9 /* MessagesViewViewModel.swift */,
+				F743DAE32A11BB5F001FACB9 /* MessageFullViewViewModel.swift */,
 				F743DAEB2A1305A9001FACB9 /* JobsListViewViewModel.swift */,
 				F7F4883E2A232BAE0091BB1E /* JobListItemViewModel.swift */,
 			);
@@ -261,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				F743DAE52A11C127001FACB9 /* HeaderView.swift */,
+				F7F488C12A2A93470091BB1E /* MessageBubble.swift */,
+				F7F488C32A2A9C380091BB1E /* CustomTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -435,16 +441,18 @@
 				F7F488BF2A2961780091BB1E /* Message.swift in Sources */,
 				F7F4883B2A1DBEE80091BB1E /* JobListItemView.swift in Sources */,
 				F743DA902A106FF4001FACB9 /* MainView.swift in Sources */,
+				F7F488C22A2A93470091BB1E /* MessageBubble.swift in Sources */,
 				F743DAD62A11BB05001FACB9 /* MainViewViewModel.swift in Sources */,
 				F743DAC42A11B29D001FACB9 /* ProfileView.swift in Sources */,
 				F743DADE2A11BB43001FACB9 /* RegisterViewViewModel.swift in Sources */,
-				F743DAE42A11BB5F001FACB9 /* MessagesViewViewModel.swift in Sources */,
+				F743DAE42A11BB5F001FACB9 /* MessageFullViewViewModel.swift in Sources */,
 				F743DA8E2A106FF4001FACB9 /* BreezeApp.swift in Sources */,
 				F743DAD82A11BB10001FACB9 /* ProfileViewViewModel.swift in Sources */,
 				F7F488B12A2803D50091BB1E /* ActiveJob.swift in Sources */,
 				F743DAEC2A1305A9001FACB9 /* JobsListViewViewModel.swift in Sources */,
 				F743DACA2A11B2DA001FACB9 /* RegisterView.swift in Sources */,
 				F7F488B32A2804510091BB1E /* MutualJob.swift in Sources */,
+				F7F488C42A2A9C380091BB1E /* CustomTextField.swift in Sources */,
 				F7F488B92A29377D0091BB1E /* MessagesListItemView.swift in Sources */,
 				F743DAE22A11BB55001FACB9 /* EstimateViewViewModel.swift in Sources */,
 				F7F4883F2A232BAE0091BB1E /* JobListItemViewModel.swift in Sources */,
@@ -624,6 +632,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -660,6 +669,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
