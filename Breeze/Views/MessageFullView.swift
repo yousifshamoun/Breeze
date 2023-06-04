@@ -22,12 +22,22 @@ struct MessageFullView: View {
                 VStack {
                     MessagesListItemView(mutualJob: currentMutualJob)
                     ScrollView {
-                        ForEach(currentMutualJob.messages, id: \.self) { message in
-                            MessageBubble(message: message)
+                    ScrollViewReader { proxy in
+                        LazyVStack {
+                            ForEach(currentMutualJob.messages, id: \.self) { message in
+                                MessageBubble(message: message)
+                                    .id(message)
+                            }
                         }
+                        .onChange(of: currentMutualJobs) { _ in
+                            proxy.scrollTo(currentMutualJobs.first!.messages.last, anchor: .bottom)
+                            print("Should've scrolled")
                     }
                     .padding(.top, 10)
                     .background(Color.white)
+                        //                            print("Debug for onChange: ", currentMutualJobs.first!.messages.last.id)
+                    }
+                    }
                 }
                 .background(Color("Peach"))
                 HStack {
@@ -53,9 +63,8 @@ struct MessageFullView: View {
     }
 }
 
-//struct MessageFullView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MessageFullView(mutualJob: .init(id: "DCC324B6-6B7C-4D83-9346-6DF8DF3797A6", uId: "", tId: "QpXfuMDVIwNKGGLFZG8dIXLf7j23", serialNumber: "1", modelNumber: "String", createdDate: 0, customerName: "Jane", address: "", zipCode: "", customerIssues: "", jobUrgency: "", additionalNotes: "", technicianName: "Saad Shamoun",  messages: [Message(id: "940AEC2F-71A7-49C1-BB6A-ED34DB503531", text: "Hi Yousif, this is Saad from High Tech Plumbing. I'd be happy to service the water heater issues you reported on Thu, June 1. Would you be available Fri, June 2 at 1:50 PM for an initial appointment?", received: true, timeSent: 1685739057.8471298)], status: "")
-//        )
-//    }
-//}
+struct MessageFullView_Previews: PreviewProvider {
+    static var previews: some View {
+        MessageFullView(mutualJobId: "5DE5FBF2-592D-433D-BA63-932B49E687FC")
+    }
+}

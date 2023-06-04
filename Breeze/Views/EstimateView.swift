@@ -14,6 +14,7 @@ struct Estimate: Identifiable {
     var items: [Estimate]?
 }
 struct EstimateView: View {
+    // TODO: Improve UI
     let job: PostProcessedJob
     @Binding var path: [PostProcessedJob]
     @StateObject var viewModel = EstimateViewViewModel()

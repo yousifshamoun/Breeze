@@ -51,7 +51,8 @@ class EstimateViewViewModel: ObservableObject {
                     zipCode: self?.zipCode as? String ?? "",
                     customerIssues: self?.customerIssues as? String ?? "",
                     jobUrgency: self?.jobUrgency as? String ?? "",
-                    additionalNotes: self?.additionalNotes as? String ?? "")
+                    additionalNotes: self?.additionalNotes as? String ?? ""
+                )
                 
                 db.collection("activeJobs").document(job.id).setData(newActiveJob.asDictionary())
             } else {
