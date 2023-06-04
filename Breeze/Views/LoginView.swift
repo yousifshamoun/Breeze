@@ -11,6 +11,7 @@ struct LoginView: View {
     @StateObject var viewModel = LoginViewViewModel()
     var body: some View {
         NavigationView {
+            // TODO: Improve the UI
             VStack {
                 // Header
                 HeaderView()

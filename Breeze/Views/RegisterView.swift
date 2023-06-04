@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject var viewModel = RegisterViewViewModel()
     var body: some View {
+        // TODO: Improve the UI
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 0)

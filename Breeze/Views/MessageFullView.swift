@@ -15,29 +15,29 @@ struct MessageFullView: View {
     }
     @FirestoreQuery var currentMutualJobs: [MutualJob]
     @StateObject var viewModel = MessageFullViewViewModel()
-    // TODO: Add automatic scrolling of view to most recent message
+
     var body: some View {
         ForEach(currentMutualJobs) { currentMutualJob in
             VStack {
                 VStack {
                     MessagesListItemView(mutualJob: currentMutualJob)
                     ScrollView {
-                    ScrollViewReader { proxy in
-                        LazyVStack {
-                            ForEach(currentMutualJob.messages, id: \.self) { message in
-                                MessageBubble(message: message)
-                                    .id(message)
+                        ScrollViewReader { proxy in
+                            LazyVStack {
+                                ForEach(currentMutualJob.messages, id: \.self) { message in
+                                    MessageBubble(message: message)
+                                        .id(message)
+                                }
+                            }
+                            .onChange(of: currentMutualJobs) { _ in
+                                withAnimation {
+                                    proxy.scrollTo(currentMutualJobs.first!.messages.last, anchor: .bottom)
+                                }
                             }
                         }
-                        .onChange(of: currentMutualJobs) { _ in
-                            proxy.scrollTo(currentMutualJobs.first!.messages.last, anchor: .bottom)
-                            print("Should've scrolled")
                     }
                     .padding(.top, 10)
                     .background(Color.white)
-                        //                            print("Debug for onChange: ", currentMutualJobs.first!.messages.last.id)
-                    }
-                    }
                 }
                 .background(Color("Peach"))
                 HStack {

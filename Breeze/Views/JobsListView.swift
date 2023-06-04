@@ -30,16 +30,20 @@ struct JobsListView: View {
                     // TODO: If the user left the sheet before submitting a diagnosticQuestion, they should be taken to a temporary NewJobView to complete their preProcessedJob instead of an Estimate view
                     .navigationDestination(for: PostProcessedJob.self) {job in
                         EstimateView(job: job, path: $path)
+                            .padding(.top, 140)
+                            .edgesIgnoringSafeArea(.top)
                     }
                     .listStyle(PlainListStyle())
                 }
              }
             .toolbar {
-                Button {
-                    viewModel.showingNewJobView = true
-                } label: {
-                    Image(systemName: "plus")
-                }
+                if path.isEmpty {
+                    Button {
+                        viewModel.showingNewJobView = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                } else {Spacer()}
             }
             .sheet(isPresented: $viewModel.showingNewJobView) {
                 NewJobView(newJobPresented:

@@ -21,6 +21,8 @@ struct MessagesListItemView: View {
             } placeholder: {
                 ProgressView()
             }
+            
+            
             VStack(alignment: .leading) {
                 Text(mutualJob.technicianName)
                     .font(.title)

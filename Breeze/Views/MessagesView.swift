@@ -24,6 +24,8 @@ struct MessagesView: View {
                     .navigationTitle("Messages")
                     .navigationDestination(for: MutualJob.self) { job in
                         MessageFullView(mutualJobId: job.id)
+                            .padding(.top, 90)
+                            .edgesIgnoringSafeArea(.top)
                     }
                     .listStyle(PlainListStyle())
                     

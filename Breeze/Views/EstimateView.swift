@@ -14,7 +14,6 @@ struct Estimate: Identifiable {
     var items: [Estimate]?
 }
 struct EstimateView: View {
-    // TODO: Improve UI
     let job: PostProcessedJob
     @Binding var path: [PostProcessedJob]
     @StateObject var viewModel = EstimateViewViewModel()
@@ -28,8 +27,9 @@ struct EstimateView: View {
                         Spacer()
                     }
                     EstimatesListView(viewModel: viewModel, path: $path, job:job)
+                    .padding(.top, 10)
             }
-            .navigationTitle("\(Date(timeIntervalSince1970: job.createdDate).formatted(date:.abbreviated, time:.omitted))")
+//            .navigationTitle("\(Date(timeIntervalSince1970: job.createdDate).formatted(date:.abbreviated, time:.omitted))")
             .padding(.horizontal)
         }
     }
@@ -40,32 +40,8 @@ struct QuestionAndAnswerView: View {
     let job: PostProcessedJob
     var body: some View {
         VStack {
-            ScrollView {
-                HStack{
-                    Spacer()
-                    HStack {
-                        Text(job.diagnosticQuestion)
-                            .foregroundColor(.white)
-                            .font(.custom("Roboto-Regular", size: 18))
-                        
-                    }
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(8)
-                }
-                HStack{
-                    HStack {
-                        Text(job.diagnosticAnswer)
-                            .foregroundColor(.black)
-                            .font(.custom("Roboto-Regular", size: 18))
-                    }
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-                    
-                    Spacer()
-                }
-            }
+                MessageBubble(message: Message(id: "1", text: job.diagnosticQuestion, received: false, timeSent: 0))
+                MessageBubble(message: Message(id: "2", text: job.diagnosticAnswer, received: true, timeSent: 0))
         }
     }
 }
@@ -78,24 +54,28 @@ struct EstimatesListView: View {
     let job: PostProcessedJob
     var body: some View {
         VStack {
+            Text("A custom estimate for this job has been generated below:")
+                .font(.footnote)
+            
             if !viewModel.estimateIsShowing {
                 Button {
                     viewModel.estimateIsShowing = true
                 } label : {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color.orange.opacity(0.8))
+                            .foregroundColor(Color("Orange"))
                             .frame(width: 200, height: 50)
                         Text("Show Estimate")
                             .foregroundColor(.white)
                             .font(.custom("Roboto-Bold", size: 18))
                     }
+                    .padding(.top, 40)
                 }
             }
             if viewModel.estimateIsShowing {
                 VStack {
                     // Estimates list
-                    // TODO: Add an actual model for getting custom estimates for jobs instead of these placeholders
+                    // TODO: Add an actual model for getting custom estimates for jobs instead of using placeholders
                     List(estimates, children: \.items) { item in
                         VStack {
                             HStack {
@@ -111,7 +91,6 @@ struct EstimatesListView: View {
                     if job.status != "ACTIVE" {
                     // Homeowner info form
                         
-                    // TODO: Replace the Textfields with the CustomTextField component for better typing and UI
                     VStack {
                         VStack(alignment: .leading) {
                             Text("Address")
@@ -170,7 +149,7 @@ struct EstimatesListView: View {
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(Color.orange.opacity(0.8))
+                                    .foregroundColor(Color("Orange"))
                                     .frame(width: 200, height: 50)
                                 Text("Get Quotes")
                                     .foregroundColor(.white)
