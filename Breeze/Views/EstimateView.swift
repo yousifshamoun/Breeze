@@ -76,20 +76,21 @@ struct EstimatesListView: View {
                 VStack {
                     // Estimates list
                     // TODO: Add an actual model for getting custom estimates for jobs instead of using placeholders
-                    List(estimates, children: \.items) { item in
-                        VStack {
-                            HStack {
-                                Text(item.name)
-                                    .font(.custom("Roboto-Regular", size: 20))
-                                Spacer()
-                                Text("$"+item.cost)
-                                    .font(.custom("Roboto-Bold", size: 20))
-                            }
-                        }
-                    }
-                    .frame(height: 450)
+//                    List(estimates, children: \.items) { item in
+//                        VStack {
+//                            HStack {
+//                                Text(item.name)
+//                                    .font(.custom("Roboto-Regular", size: 20))
+//                                Spacer()
+//                                Text("$"+item.cost)
+//                                    .font(.custom("Roboto-Bold", size: 20))
+//                            }
+//                        }
+//                    }
+//                    .frame(height: 450)
                     if job.status != "ACTIVE" {
                     // Homeowner info form
+                    // TODO: Add option for homeowners to submit photo/video while creating their lead
                         
                     VStack {
                         VStack(alignment: .leading) {
